@@ -12,6 +12,7 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int viewontag          = 1;        /* switch view on tag switch */
 static const char *fonts[]          = {
     "SauceCodePro Nerd Font:size=13",
     "PingFang SC:size=12"
@@ -57,8 +58,8 @@ static const Rule rules[] = {
 	{ "Google-chrome",       NULL,       NULL,       1,            0,           -1 },
 	{ "Alacritty",           NULL,       NULL,       1 << 1,       0,           -1 },
     { "netease-cloud-music", NULL,       NULL,       1 << 2,       1,           -1 },
+	{ "listen1",             NULL,       NULL,       1 << 2,       1,           -1 },
 	{ "Clashy",              NULL,       NULL,       1 << 3,       1,           -1 },
-	{ "listen1",             NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
