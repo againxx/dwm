@@ -58,8 +58,8 @@ static const Rule rules[] = {
 	{ "Google-chrome",       NULL,       NULL,       1,            0,           -1 },
 	{ "Alacritty",           NULL,       NULL,       1 << 1,       0,           -1 },
     { "netease-cloud-music", NULL,       NULL,       1 << 2,       1,           -1 },
+	{ "listen1",             NULL,       NULL,       1 << 2,       1,           -1 },
 	{ "Clashy",              NULL,       NULL,       1 << 3,       1,           -1 },
-	{ "listen1",             NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -88,7 +88,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd1[]  = { "alacritty", NULL };
+static const char *termcmd2[]  = { "st", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *trayercmd[]  = { "/home/ustc-1314/.local/share/dwm/t-toggle.sh",  NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",    NULL };
@@ -100,7 +101,8 @@ static const char *switchbar[] = { "/home/ustc-1314/.local/share/dwm/switch-bar.
 static Key keys[] = {
 	/* modifier                     key              function        argument */
 	{ MODKEY,                       XK_p,            spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return,       spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return,       spawn,          {.v = termcmd2 } },
+	{ MODKEY|ShiftMask,             XK_Return,       spawn,          {.v = termcmd1 } },
 	{ MODKEY,                       XK_w,            spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_a,            spawn,          {.v = trayercmd } },
 	{ MODKEY|ShiftMask,             XK_t,            spawn,          {.v = switchbar } },
