@@ -46,7 +46,7 @@ static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0}
 static const XPoint stickyiconbb    = {4,8};    /* defines the bottom right corner of the polygon's bounding box (speeds up scaling) */
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -130,13 +130,17 @@ static Key keys[] = {
 	{ MODKEY,                       XK_bracketright, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_bracketleft,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_bracketright, tagmon,         {.i = +1 } },
+    { MODKEY,                       XK_colon,        viewtoleft,     {0} },
+    { MODKEY,                       XK_period,       viewtoright,    {0} },
+    { MODKEY|ShiftMask,             XK_colon,        tagtoleft,      {0} },
+    { MODKEY|ShiftMask,             XK_period,       tagtoright,     {0} },
     { MODKEY|Mod1Mask,              XK_0,            togglegaps,     {0} },
     { MODKEY|Mod1Mask|ShiftMask,    XK_0,            defaultgaps,    {0} },
     { MODKEY|Mod1Mask,              XK_equal,        incrgaps,       {.i = +1 } },
     { MODKEY|Mod1Mask,              XK_minus,        incrgaps,       {.i = -1 } },
-    { MODKEY|Mod1Mask|ShiftMask,    XK_equal,         incrogaps,      {.i = +1 } },
+    { MODKEY|Mod1Mask|ShiftMask,    XK_equal,        incrogaps,      {.i = +1 } },
  	{ MODKEY|Mod1Mask|ShiftMask,    XK_minus,        incrogaps,      {.i = -1 } },
-    { MODKEY|Mod1Mask|ControlMask,  XK_equal,         incrigaps,      {.i = +1 } },
+    { MODKEY|Mod1Mask|ControlMask,  XK_equal,        incrigaps,      {.i = +1 } },
     { MODKEY|Mod1Mask|ControlMask,  XK_minus,        incrigaps,      {.i = -1 } },
 	TAGKEYS(                        XK_1,                         0)
 	TAGKEYS(                        XK_2,                         1)
