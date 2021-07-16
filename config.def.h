@@ -17,7 +17,6 @@ static const char *fonts[]          = {
     "SauceCodePro Nerd Font:size=13",
     "PingFang SC:size=12"
 };
-static const char dmenufont[]       = "SauceCodePro Nerd Font:size=13";
 static const char col_dark[]        = "#0F1419";
 static const char col_gray1[]       = "#212733";
 static const char col_gray2[]       = "#444444";
@@ -86,8 +85,6 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd1[]  = { "alacritty", NULL };
 static const char *termcmd2[]  = { "st", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
@@ -100,7 +97,6 @@ static const char *switchbar[] = { "/home/ustc-1314/.local/share/dwm/switch-bar.
 
 static Key keys[] = {
 	/* modifier                     key              function        argument */
-	{ MODKEY,                       XK_p,            spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,       spawn,          {.v = termcmd2 } },
 	{ MODKEY|ShiftMask,             XK_Return,       spawn,          {.v = termcmd1 } },
 	{ MODKEY,                       XK_w,            spawn,          {.v = browsercmd } },
