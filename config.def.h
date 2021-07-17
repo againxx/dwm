@@ -73,6 +73,7 @@ static const Layout layouts[] = {
 	{ "拓",       tile },    /* first entry is default */
 	{ " ",       NULL },    /* no layout function means floating behavior */
 	{ " ",       monocle },
+    { " ",       deck },
 };
 
 /* key definitions */
@@ -128,9 +129,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,            setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,            setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,            setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_y,            setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_semicolon,    setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_semicolon,    togglefloating, {0} },
-    { MODKEY|ShiftMask,             XK_f,            togglefullscr,  {0} },
+    { MODKEY|ShiftMask,             XK_m,            togglefullscr,  {0} },
     { MODKEY,                       XK_s,            togglesticky,   {0} },
 	{ MODKEY,                       XK_0,            view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,            tag,            {.ui = ~0 } },
