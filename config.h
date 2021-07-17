@@ -58,8 +58,9 @@ static const Rule rules[] = {
 	{ "Google-chrome",       NULL,       NULL,       1,            0,           -1 },
 	{ "Alacritty",           NULL,       NULL,       1 << 1,       0,           -1 },
     { "netease-cloud-music", NULL,       NULL,       1 << 2,       1,           -1 },
-	{ "listen1",             NULL,       NULL,       1 << 2,       1,           -1 },
 	{ "Clashy",              NULL,       NULL,       1 << 3,       1,           -1 },
+	{ "listen1",             NULL,       NULL,       1 << 7,       1,           -1 },
+	{ "GoldenDict",          NULL,       NULL,       1 << 8,       1,           -1 },
 };
 
 /* layout(s) */
