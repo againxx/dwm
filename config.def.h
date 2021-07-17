@@ -116,6 +116,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,            spawn,          {.v = rofirun } },
 	{ MODKEY,                       XK_c,            spawn,          {.v = roficlip } },
 	{ MODKEY|ShiftMask,             XK_d,            spawn,          {.v = rofikdeconnect } },
+	{ MODKEY,                       XK_Escape,       spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_b,            togglebar,      {0} },
     { MODKEY|ShiftMask,             XK_j,            rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,            rotatestack,    {.i = -1 } },
