@@ -15,6 +15,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int viewontag          = 1;        /* switch view on tag switch */
 static const char *fonts[]          = {
     "SauceCodePro Nerd Font:size=13",
+    "Noto Color Emoji:size=10",
     "PingFang SC:size=12"
 };
 static const char col_dark[]        = "#0F1419";
@@ -94,6 +95,11 @@ static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
 static const char *screencmd[] = { "flameshot", "gui", NULL };
 static const char *switchbar[] = { "/home/ustc-1314/.local/share/dwm/switch-bar.sh", NULL };
+static const char *rofiapp[] = { "rofi", "-show", "combi", "-theme", "dracula-icon", NULL };
+static const char *rofirun[] = { "rofi", "-show", "run", "-theme", "dracula-grid", NULL };
+static const char *roficlip[] = { "rofi", "-modi", "clipboard:greenclip print", "-show", "clipboard", "-run-command", "'{cmd}'", "-theme", "dracula-line", NULL };
+static const char *rofikdeconnect[] = { "/home/ustc-1314/.local/share/dwm/rofi_kdeconnect.sh", NULL };
+static const char *lockcmd[] = { "/home/ustc-1314/.local/share/dwm/lock.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key              function        argument */
@@ -102,6 +108,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,            spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_a,            spawn,          {.v = trayercmd } },
 	{ MODKEY|ShiftMask,             XK_t,            spawn,          {.v = switchbar } },
+	{ MODKEY,                       XK_slash,        spawn,          {.v = rofiapp } },
+	{ MODKEY,                       XK_p,            spawn,          {.v = rofirun } },
+	{ MODKEY,                       XK_c,            spawn,          {.v = roficlip } },
+	{ MODKEY|ShiftMask,             XK_d,            spawn,          {.v = rofikdeconnect } },
 	{ MODKEY,                       XK_b,            togglebar,      {0} },
     { MODKEY|ShiftMask,             XK_j,            rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,            rotatestack,    {.i = -1 } },
@@ -113,7 +123,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,            setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_z,            zoom,           {0} },
 	{ MODKEY,                       XK_Tab,          view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,            killclient,     {0} },
+	{ MODKEY,                       XK_q,            killclient,     {0} },
 	{ MODKEY,                       XK_t,            setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,            setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,            setlayout,      {.v = &layouts[2]} },
@@ -126,9 +136,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_bracketright, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_bracketleft,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_bracketright, tagmon,         {.i = +1 } },
-    { MODKEY,                       XK_colon,        viewtoleft,     {0} },
+    { MODKEY,                       XK_comma,        viewtoleft,     {0} },
     { MODKEY,                       XK_period,       viewtoright,    {0} },
-    { MODKEY|ShiftMask,             XK_colon,        tagtoleft,      {0} },
+    { MODKEY|ShiftMask,             XK_comma,        tagtoleft,      {0} },
     { MODKEY|ShiftMask,             XK_period,       tagtoright,     {0} },
     { MODKEY|Mod1Mask,              XK_0,            togglegaps,     {0} },
     { MODKEY|Mod1Mask|ShiftMask,    XK_0,            defaultgaps,    {0} },
@@ -161,7 +171,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd2 } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
