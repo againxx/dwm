@@ -142,7 +142,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_comma,        tagtoleft,      {0} },
     { MODKEY|ShiftMask,             XK_period,       tagtoright,     {0} },
     { MODKEY|Mod1Mask,              XK_0,            togglegaps,     {0} },
-    { MODKEY|Mod1Mask|ShiftMask,    XK_0,            defaultgaps,    {0} },
+    { MODKEY|Mod1Mask|ControlMask,  XK_0,            defaultgaps,    {0} },
     { MODKEY|Mod1Mask,              XK_equal,        incrgaps,       {.i = +1 } },
     { MODKEY|Mod1Mask,              XK_minus,        incrgaps,       {.i = -1 } },
     { MODKEY|Mod1Mask|ShiftMask,    XK_equal,        incrogaps,      {.i = +1 } },
