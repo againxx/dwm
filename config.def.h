@@ -92,6 +92,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd1[]  = { "alacritty", NULL };
 static const char *termcmd2[]  = { "st", NULL };
+static const char *termcmd3[]  = { "kitty", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *trayercmd[]  = { "/home/ustc-1314/.local/share/dwm/t-toggle.sh",  NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",    NULL };
@@ -109,6 +110,7 @@ static Key keys[] = {
 	/* modifier                     key              function        argument */
 	{ MODKEY,                       XK_Return,       spawn,          {.v = termcmd2 } },
 	{ MODKEY|ShiftMask,             XK_Return,       spawn,          {.v = termcmd1 } },
+	{ MODKEY|ControlMask,           XK_Return,       spawn,          {.v = termcmd3 } },
 	{ MODKEY,                       XK_w,            spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_a,            spawn,          {.v = trayercmd } },
 	{ MODKEY|ShiftMask,             XK_t,            spawn,          {.v = switchbar } },
