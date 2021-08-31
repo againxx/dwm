@@ -1711,6 +1711,10 @@ tagtoleft(const Arg *arg) {
 	&& __builtin_popcount(selmon->tagset[selmon->seltags] & TAGMASK) == 1
 	&& selmon->tagset[selmon->seltags] > 1) {
 		selmon->sel->tags >>= 1;
+        if (viewontag) {
+            selmon->seltags ^= 1; /* toggle sel tagset */
+            selmon->tagset[selmon->seltags] = selmon->tagset[selmon->seltags ^ 1] >> 1;
+        }
 		focus(NULL);
 		arrange(selmon);
 	}
@@ -1722,6 +1726,10 @@ tagtoright(const Arg *arg) {
 	&& __builtin_popcount(selmon->tagset[selmon->seltags] & TAGMASK) == 1
 	&& selmon->tagset[selmon->seltags] & (TAGMASK >> 1)) {
 		selmon->sel->tags <<= 1;
+        if (viewontag) {
+            selmon->seltags ^= 1; /* toggle sel tagset */
+            selmon->tagset[selmon->seltags] = selmon->tagset[selmon->seltags ^ 1] << 1;
+        }
 		focus(NULL);
 		arrange(selmon);
 	}
