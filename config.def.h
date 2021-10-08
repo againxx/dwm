@@ -92,7 +92,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd1[]  = { "alacritty", NULL };
 static const char *termcmd2[]  = { "st", NULL };
-static const char *termcmd3[]  = { "kitty", NULL };
+static const char *termcmd3[]  = { "wezterm", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
 static const char *trayercmd[]  = { "/home/ustc-1314/.local/share/dwm/t-toggle.sh",  NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",    NULL };
