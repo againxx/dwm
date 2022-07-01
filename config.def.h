@@ -14,9 +14,9 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int viewontag          = 1;        /* switch view on tag switch */
 static const char *fonts[]          = {
-    "SauceCodePro Nerd Font:size=13",
-    "Noto Color Emoji:size=10",
-    "PingFang SC:size=12"
+    "SauceCodePro Nerd Font:size=9",
+    "Noto Color Emoji:size=9",
+    "PingFang SC:size=9"
 };
 static const char col_dark[]        = "#101521";
 static const char col_gray1[]       = "#1f2430";
